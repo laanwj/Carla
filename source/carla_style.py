@@ -92,7 +92,7 @@ class CarlaApplication(object):
             QApplication.setFont(customFont)
 
             # fix Qt5 not finding plarform dir on Windows
-            if WINDOWS:
+            if MACOS or WINDOWS:
                 QApplication.addLibraryPath(CWD)
 
         # set style

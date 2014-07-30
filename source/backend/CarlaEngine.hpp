@@ -1047,9 +1047,9 @@ protected:
      * Some internal classes read directly from pData.
      */
     friend class EngineInternalGraph;
-    friend class PatchbayGraph;
-    friend class RackGraph;
     friend class ScopedActionLock;
+    friend struct PatchbayGraph;
+    friend struct RackGraph;
 
     // -------------------------------------------------------------------
     // Internal stuff
