@@ -388,6 +388,13 @@
            </widget>
           </item>
           <item>
+           <widget class="QCheckBox" name="ch_send_program_changes">
+            <property name="text">
+             <string>Send Program changes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QCheckBox" name="ch_send_control_changes">
             <property name="text">
              <string>Send Control Changes</string>

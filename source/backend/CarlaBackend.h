@@ -226,6 +226,11 @@ const uint PLUGIN_OPTION_SEND_PITCHBEND = 0x080;
  */
 const uint PLUGIN_OPTION_SEND_ALL_SOUND_OFF = 0x100;
 
+/*!
+ * Send MIDI program and bank changes.
+ */
+const uint PLUGIN_OPTION_SEND_PROGRAM_CHANGES = 0x200;
+
 /** @} */
 
 /* ------------------------------------------------------------------------------------------------------------

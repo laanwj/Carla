@@ -559,6 +559,7 @@ class PluginEdit(QDialog):
         self.ui.ch_send_note_aftertouch.clicked.connect(self.slot_optionChanged)
         self.ui.ch_send_pitchbend.clicked.connect(self.slot_optionChanged)
         self.ui.ch_send_all_sound_off.clicked.connect(self.slot_optionChanged)
+        self.ui.ch_send_program_changes.clicked.connect(self.slot_optionChanged)
 
         self.ui.dial_drywet.realValueChanged.connect(self.slot_dryWetChanged)
         self.ui.dial_vol.realValueChanged.connect(self.slot_volumeChanged)
@@ -762,6 +763,8 @@ class PluginEdit(QDialog):
         self.ui.ch_send_pitchbend.setChecked(self.fPluginInfo['optionsEnabled'] & PLUGIN_OPTION_SEND_PITCHBEND)
         self.ui.ch_send_all_sound_off.setEnabled(self.fPluginInfo['optionsAvailable'] & PLUGIN_OPTION_SEND_ALL_SOUND_OFF)
         self.ui.ch_send_all_sound_off.setChecked(self.fPluginInfo['optionsEnabled'] & PLUGIN_OPTION_SEND_ALL_SOUND_OFF)
+        self.ui.ch_send_program_changes.setEnabled(self.fPluginInfo['optionsAvailable'] & PLUGIN_OPTION_SEND_PROGRAM_CHANGES)
+        self.ui.ch_send_program_changes.setChecked(self.fPluginInfo['optionsEnabled'] & PLUGIN_OPTION_SEND_PROGRAM_CHANGES)
 
         self.ui.sw_programs.setCurrentIndex(0 if self.fPluginInfo['type'] in (PLUGIN_VST, PLUGIN_GIG, PLUGIN_SFZ) else 1)
 
@@ -1060,6 +1063,8 @@ class PluginEdit(QDialog):
             widget = self.ui.ch_send_pitchbend
         elif option == PLUGIN_OPTION_SEND_ALL_SOUND_OFF:
             widget = self.ui.ch_send_all_sound_off
+        elif option == PLUGIN_OPTION_SEND_PROGRAM_CHANGES:
+            widget = self.ui.ch_send_program_changes
         else:
             return
 
@@ -1237,6 +1242,8 @@ class PluginEdit(QDialog):
             option = PLUGIN_OPTION_SEND_PITCHBEND
         elif sender == self.ui.ch_send_all_sound_off:
             option = PLUGIN_OPTION_SEND_ALL_SOUND_OFF
+        elif sender == self.ui.ch_send_program_changes:
+            option = PLUGIN_OPTION_SEND_PROGRAM_CHANGES
         else:
             return
 
